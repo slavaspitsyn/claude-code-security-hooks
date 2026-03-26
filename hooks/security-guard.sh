@@ -11,7 +11,7 @@ CMD=$(echo "$INPUT" | jq -r '.tool_input.command // empty' 2>/dev/null)
 
 # --- SENSITIVE PATHS ---
 # Add your own credential paths here
-CRED_PATTERNS='(\.config/gcloud|\.ssh/id_|\.ssh/known_hosts|\.aws/credentials|\.aws/config|\.claude/settings|\.env|\.netrc|application_default_credentials|service.account\.json|credentials\.json|secret.*\.json|\.kube/config)'
+CRED_PATTERNS='(\.config/gcloud|\.ssh/id_|\.ssh/known_hosts|\.aws/credentials|\.aws/config|\.claude/settings|\.env|\.netrc|application_default_credentials|service.account\.json|credentials\.json|secret.*\.json|\.kube/config|\.azure/|\.oci/|\.docker/config\.json|\.config/gh/|\.git-credentials|\.vault-token|\.pulumi/|\.terraform\.d/|\.config/doctl/)'
 
 # --- EXFIL TOOLS ---
 EXFIL_TOOLS='(curl|wget|nc|ncat|netcat|scp|rsync|ftp|sftp|telnet)'

@@ -185,9 +185,23 @@ But prompt injections use straightforward commands 99% of the time. These hooks 
 3. Use passphrase-protected SSH keys
 4. Consider [1Password SSH Agent](https://developer.1password.com/docs/ssh/) — biometric confirmation per key use
 
+## Testing
+
+Run the test suite to verify all hooks work correctly:
+
+```bash
+./test_hooks.sh
+```
+
+47 tests covering all three hooks — exfiltration blocking, read protection, and bash file access. All tests should pass with `BLOCKED` or `ALLOWED` as expected.
+
 ## Contributing
 
 Found a bypass? New attack vector? PRs and issues welcome.
+
+## Acknowledgments
+
+- [Cicero Jacobi](https://github.com/cj4c0b1) — expanded credential coverage (Azure, OCI, Vault, Pulumi, Terraform, Docker, GitHub CLI) and inspired the automated test suite via [antigravity-security-hooks](https://github.com/cj4c0b1/antigravity-security-hooks)
 
 ## License
 
